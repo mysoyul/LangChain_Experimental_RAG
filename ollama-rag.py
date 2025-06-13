@@ -81,7 +81,7 @@ if uploaded_file is not None:
     retriever = vector.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
     # LLM 정의
-    llm = ChatOllama(model="deepseek-r1:7b")
+    llm = ChatOllama(model="deepseek-r1:1.5b")
     #llm = ChatOllama(model="qwen2.5:1.5b")
 
     # # 시스템 프롬프트 정의

@@ -9,7 +9,7 @@ from langchain.chains.retrieval import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 
 # =====================
-# 🎨 UI 스타일 설정
+#  UI 스타일 설정
 # =====================
 PRIMARY_COLOR = "#1E90FF"
 SECONDARY_COLOR = "#FF6347"
@@ -67,9 +67,9 @@ st.markdown(
 )
 
 # =====================
-# 🔥 RAG 시스템 설정
+#  RAG 시스템 설정
 # =====================
-MODEL_NAME = "deepseek-r1:7b"
+MODEL_NAME = "deepseek-r1:1.5b"
 SEARCH_K = 3
 TEMP_PDF_PATH = "uploaded_document.pdf"
 
@@ -82,7 +82,7 @@ SYSTEM_PROMPT = (
 )
 
 # =====================
-# 📌 Streamlit UI
+#  Streamlit UI
 # =====================
 st.title("DeepSeek R1 & Ollama 기반 RAG 시스템")
 
@@ -91,7 +91,7 @@ uploaded_file = st.file_uploader("📄 PDF 파일을 업로드하세요", type="
 
 if uploaded_file and "rag_chain" not in st.session_state:
     try:
-        with st.spinner("📂 PDF 파일을 처리 중..."):
+        with st.spinner(" PDF 파일을 처리 중..."):
             # PDF 로드
             with open(TEMP_PDF_PATH, "wb") as f:
                 f.write(uploaded_file.getvalue())
@@ -113,20 +113,20 @@ if uploaded_file and "rag_chain" not in st.session_state:
             combine_docs_chain = create_stuff_documents_chain(llm, prompt)
             st.session_state.rag_chain = create_retrieval_chain(retriever, combine_docs_chain)
 
-            st.markdown('<p class="stAlert-success">✅ PDF 처리가 완료되었습니다! 이제 질문을 입력하세요.</p>', unsafe_allow_html=True)
+            st.markdown('<p class="stAlert-success"> PDF 처리가 완료되었습니다! 이제 질문을 입력하세요.</p>', unsafe_allow_html=True)
     except Exception as e:
         st.error(f"파일 처리 중 오류 발생: {e}")
 
 # 사용자 입력 처리
-user_input = st.text_input("💬 PDF와 관련된 질문을 입력하세요:")
+user_input = st.text_input(" PDF와 관련된 질문을 입력하세요:")
 
 if user_input and "rag_chain" in st.session_state:
-    with st.spinner("🤖 답변 생성 중..."):
+    with st.spinner(" 답변 생성 중..."):
         try:
             response = st.session_state.rag_chain.invoke({"input": user_input})
-            st.subheader("📢 응답:")
-            st.write(response.get("answer", "⚠️ 응답을 생성할 수 없습니다."))
+            st.subheader(" 응답:")
+            st.write(response.get("answer", " 응답을 생성할 수 없습니다."))
         except Exception as e:
             st.error(f"응답 생성 중 오류 발생: {e}")
 elif not uploaded_file:
-    st.markdown('<p class="stAlert-info">ℹ️ 진행하려면 PDF 파일을 업로드하세요.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="stAlert-info"> 진행하려면 PDF 파일을 업로드하세요.</p>', unsafe_allow_html=True)
