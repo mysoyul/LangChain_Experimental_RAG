@@ -5,16 +5,14 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI 
 from langchain_core.output_parsers import StrOutputParser
 
-
-load_dotenv()
+load_dotenv(dotenv_path='../.env')
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
+print(OPENAI_API_KEY[:5])
 
 prompt = ChatPromptTemplate.from_messages(
     [ ("system", "당신은 개발자입니다.") , 
-     ("user", "{input}") ]
+      ("user", "{input}") ]
 )
-
 
 llm = ChatOpenAI(
     api_key=OPENAI_API_KEY,
@@ -25,10 +23,8 @@ llm = ChatOpenAI(
 
 output_parser = StrOutputParser()
 
-
 # LCEL 
 chain = prompt | llm | output_parser
-
 
 # user_input = input("질문을 입력하세요: ")
 

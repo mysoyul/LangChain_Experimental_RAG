@@ -13,7 +13,6 @@ dependencies = [
     "langchain-openai (>=0.3.18,<0.4.0)",
     "gradio (>=5.31.0,<6.0.0)",
     "langchain-community (>=0.3.24,<0.4.0)",
-    "pypdf (>=5.6.0,<6.0.0)",
     "chromadb (>=1.0.12,<2.0.0)",
     "gradio-pdf (>=0.0.22,<0.0.23)",
     "langchain-huggingface (>=0.2.0,<0.3.0)",
@@ -38,6 +37,12 @@ dependencies = [
     "sentence-transformers (>=4.1.0,<5.0.0)",
     "wikipedia (>=1.4.0,<2.0.0)",
     "langserve (>=0.3.1,<0.4.0)",
+    "langchain-google-genai (>=2.1.9,<3.0.0)",
+    "pypdf (>=4.2.0,<5.0.0)",
+    "langchain-upstage (>=0.7.2,<0.8.0)",
+    "sse-starlette (>=3.0.2,<4.0.0)",
+    "fastapi (>=0.116.1,<0.117.0)",
+    "langsmith (>=0.4.14,<0.5.0)",
     
 ]
 
