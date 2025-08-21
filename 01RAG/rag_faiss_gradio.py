@@ -2,7 +2,7 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(dotenv_path='../.env')
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # API 키 검증
@@ -17,7 +17,7 @@ import gradio as gr
 # RAG Chain 구현을 위한 패키지
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS  # Chroma에서 FAISS로 변경
+from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
