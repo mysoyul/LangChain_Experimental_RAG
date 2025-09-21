@@ -10,7 +10,8 @@ from pydantic import BaseModel
 from typing import Dict, Any
 
 # .env 파일 로드
-load_dotenv(dotenv_path='../.env')
+#load_dotenv(dotenv_path='../.env')
+load_dotenv()
 
 # 환경 변수에서 API 키 가져오기
 api_key = os.getenv("OPENAI_API_KEY")
@@ -27,7 +28,8 @@ app = FastAPI(title="LangServe API with .env")
 llm = ChatOpenAI(
     api_key=api_key,
     base_url="https://api.groq.com/openai/v1",
-    model="meta-llama/llama-4-scout-17b-16e-instruct",
+    #model="meta-llama/llama-4-scout-17b-16e-instruct",
+    model="moonshotai/kimi-k2-instruct-0905",
     temperature=0
 )
 
