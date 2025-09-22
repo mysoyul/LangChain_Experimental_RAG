@@ -3,3 +3,6 @@
 data/.ipynb_checkpoints/
 .env
 db/
+
+01RAG/faiss_index/**
+01RAG/faiss_index_upstage/**
