@@ -2,7 +2,7 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path='../.env')
+load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # API 키 검증
