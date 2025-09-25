@@ -11,7 +11,6 @@ dependencies = [
     "python-dotenv (>=1.1.0,<2.0.0)",
     "langchain (>=0.3.25,<0.4.0)",
     "langchain-openai (>=0.3.18,<0.4.0)",
-    "gradio (>=5.31.0,<6.0.0)",
     "langchain-community (>=0.3.24,<0.4.0)",
     "chromadb (>=1.0.12,<2.0.0)",
     "gradio-pdf (>=0.0.22,<0.0.23)",
@@ -44,6 +43,9 @@ dependencies = [
     "fastapi (>=0.116.1,<0.117.0)",
     "langsmith (>=0.4.14,<0.5.0)",
     "huggingface-hub (>=0.35.0,<0.36.0)",
+    "nest-asyncio (>=1.6.0,<2.0.0)",
+    "gradio (==5.46.0)",
+    "websockets (==10.4)",
     
 ]
 
